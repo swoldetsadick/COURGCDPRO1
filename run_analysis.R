@@ -1,7 +1,22 @@
+#-----------------------------------------------------------------------------------------------------
+        ##### I) Downloading datasets and loading libraries
+#-----------------------------------------------------------------------------------------------------
+
+# downloading and storing datasets directly from the internet
+url <- "http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(url, "getdata-projectfiles-UCI HAR Dataset.zip", mode="wb")
+unzip("getdata-projectfiles-UCI HAR Dataset.zip")
+
+# loading plyr library
+suppressMessages(library(plyr))
 
 #------------------------------------------------------------------------------------------------------
-        ##### One function to find them, One function to load them all
+        ##### II) One function to find them, One function to load them all
 #------------------------------------------------------------------------------------------------------
+
+# The following function intitled `readdata` finds all relevant documents, transforms them in a usable format and stores them
+# Please read the readme file for more details on `readdata` function
+
 readdata <- function(dataname){
                 
         if(grepl(".txt", dataname)==TRUE & file.exists(paste("./UCI HAR Dataset/",dataname,sep=""))){
@@ -55,12 +70,19 @@ readdata <- function(dataname){
         if(file.exists("./UCI Results")==TRUE){write.csv(data,path)}
         else { dir.create("UCI Results")
                        write.csv(data,path)}
+        
 }
 #-----------------------------------------------------------------------------------------------------------------
-        ##### and in the machine bind them  
+        ##### III) and in the machine bind them  
 #-----------------------------------------------------------------------------------------------------------------
 
+# The following function intitled `collage` loads datasets created by previous `readdate` function and merges them
+# in a way that answers to questions of the project assignment
+# Please read the readme file for more details on `collage` function
+
 collage <- function(all){
+        
+        
         if(all=="all"){
                 if((file.exists("./UCI Results/activity_labels.txt_data.csv") & file.exists("./UCI Results/features.txt_data.csv") & file.exists("./UCI Results/test_data.csv") & file.exists("./UCI Results/train_data.csv")) ==TRUE){
                         rm(list = ls())
@@ -101,19 +123,23 @@ collage <- function(all){
         else {stop("Please enter valid command : collage(all)")}
 }
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        ##### One function to solve them all,
+        ##### IV) One function to solve them all,
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-url <- "http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-download.file(url, "getdata-projectfiles-UCI HAR Dataset.zip", mode="wb")
-unzip("getdata-projectfiles-UCI HAR Dataset.zip")
 
-suppressMessages(library(plyr))
+# This part use readdata function to read all necessary files or folders to get necessary data to construct final dataset
 
 readdata("features.txt")
 readdata("activity_labels.txt")
 readdata("test")
 readdata("train")
+
+# Then uses collage function to bind all datasets together to form tidy dataset needed for assignment
+# but also some intermediary datasets
+
 collage("all")
+
+# The following message is printed at the end of the process.
+
 cat("\n","\n","All done. You will find in your current working directory a ")
 cat("\n","compressed file called getdata-projectfiles-UCI HAR Dataset.zip ")
 cat("\n", "which is the original downloaded file, and a file UCI HAR Dataset ")
