@@ -3,6 +3,7 @@ Code Book
 ----------------
 Transformations
 ----------------
+
 The run_analysis.R script process can be described as follows:
 
 1) Directely downloads data called getdata-projectfiles-UCI HAR Dataset.zip from 
@@ -56,9 +57,9 @@ columns. The resulting dataset is called `5) tidy.txt` [found in UCI Result fold
 
 **5) tidy.txt dataset is the dataset of interest here.**
 
-----------------
-5) tidy.txt
-----------------
+----------------------
+5) tidy.txt:  Summary
+----------------------
 
 The tidy dataset contains 180 rows over 81 columns.
 Each record corresponds to average over activities and subjects of mean and standard deviation of different
@@ -88,3 +89,58 @@ The dataset has no NAs and names of columns are:
 "fBodyGyro.meanFreq...Z_mean"          "fBodyAccMag.mean.._mean"              "fBodyAccMag.meanFreq.._mean"          "fBodyBodyAccJerkMag.mean.._mean"     
 "fBodyBodyAccJerkMag.meanFreq.._mean"  "fBodyBodyGyroMag.mean.._mean"         "fBodyBodyGyroMag.meanFreq.._mean"     "fBodyBodyGyroJerkMag.mean.._mean"    
 "fBodyBodyGyroJerkMag.meanFreq.._mean"
+
+---------------------------------------------
+5) tidy.txt:  Variable Description and Units
+---------------------------------------------
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals 
+(prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth 
+filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals 
+(tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. The **acceleration** signal are expressed in 
+standard gravity **units 'g'**
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). 
+Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, 
+tBodyGyroJerkMag). **The units for all angular velocity measures are radians/second.**
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, 
+fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+The set of variables that were estimated from these signals are: 
+
+mean(): Mean value
+std(): Standard deviation
+
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+
+gravityMean
+tBodyAccMean
+tBodyAccJerkMean
+tBodyGyroMean
+tBodyGyroJerkMean
+
+"id" is a unique id number assigned to subjects in the study.
+"activity" describes activity accomplished by subjects.
+Look above for complete list of variables in the dataset.

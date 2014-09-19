@@ -53,8 +53,8 @@ The whole script needs about two to three minutes to run depending on internet
 connection speed.
 
 The script itself is divided in 4 main part.
-Part I and IV are completely self-explanatory and will not be discussed here.
-Instead this document wil focus on describing the internal functioning of fun-
+Part I and IV are completely self-explanatory.
+Instead this document first will focus on describing the internal functioning of fun-
 ctions `readdata` in part II and `collage` in part II.
 
 	`readdata`
@@ -125,6 +125,17 @@ library. Then columns of dataset are relabeled by adding "_mean" suffix to there
 existing names, except for the columns id and activity. The resulting tidy dataset is
 saved under "5)tidy.txt" in UCI Results file in answer to question 5 of assignment.
 
+	`Part I`
+The first part of the R script 1) Directely downloads data called getdata-projectfiles-UCI HAR Dataset.zip 
+from "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip" to current 
+working directory. Then uncompresses this file creating file UCI HAR Dataset in current working directory. 
+And loads library plyr.
+
+	`Part IV`
+The last part use readdata function to read data "activity_labels.txt", "features.txt" and all
+data contained in "test" or "train" files in UCI HAR Dataset. Then uses collage function to create
+different datasets as described above.
+Read "Results of assignment" part above for descritpion of resulting datasets.
 
 
                         
