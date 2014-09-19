@@ -43,7 +43,7 @@ datasets. Additionally, in file UCI Results you will find datasets
 built by run_analysis.R script. Those labeled 1 to 5 are datasets
 built in answer to questions of corresponding number of the project
 as for the rest they are transitionary datasets not of interest here.
-**The end dataset of interest is called <u>5) tidy</u>**
+<br>**The end dataset of interest is called 5) tidy.csv**
 
 --------------------------
 R script : run_analysis.R
