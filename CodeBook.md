@@ -52,12 +52,12 @@ in a descriptive way. The resulting dataset is called `3)and 4) labeled.csv`
 
 8) Last it creates a second, independent tidy data set with the average of each variable for each 
 activity and each subject. Appends the suffix _mean to each column of dataset except id and activity 
-columns. The resulting dataset is called `5) tidy.csv` [found in UCI Result folder].
+columns. The resulting dataset is called `5) tidy.txt` [found in UCI Result folder].
 
-**5) tidy.csv dataset is the dataset of interest here.**
+**5) tidy.txt dataset is the dataset of interest here.**
 
 ----------------
-5) tidy.csv
+5) tidy.txt
 ----------------
 
 The tidy dataset contains 180 rows over 81 columns.

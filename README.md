@@ -43,7 +43,7 @@ datasets. Additionally, in file UCI Results you will find datasets
 built by run_analysis.R script. Those labeled 1 to 5 are datasets
 built in answer to questions of corresponding number of the project
 as for the rest they are transitionary datasets not of interest here.
-<br>**The end dataset of interest is called 5) tidy.csv**
+<br>**The end dataset of interest is called 5) tidy.txt**
 
 --------------------------
 R script : run_analysis.R
@@ -123,7 +123,7 @@ then lines 116 to 118 of the function creates a last, independent tidy data set 
 average of each variable for each activity and each subject using ddply function of plyr
 library. Then columns of dataset are relabeled by adding "_mean" suffix to there already
 existing names, except for the columns id and activity. The resulting tidy dataset is
-saved under "5)tidy.csv" in UCI Results file in answer to question 5 of assignment.
+saved under "5)tidy.txt" in UCI Results file in answer to question 5 of assignment.
 
 
 

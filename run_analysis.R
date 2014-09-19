@@ -115,7 +115,7 @@ collage <- function(all){
                                 
                         tidy <- ddply(extract, .(id, activity), .fun=function(x){ colMeans(x[,-c(1:2)]) })
                         colnames(tidy)[-c(1:2)] <- paste(colnames(tidy)[-c(1:2)], "_mean", sep="")
-                        write.csv(tidy,"./UCI Results/5)tidy.csv",row.names=FALSE)
+                        write.table(tidy,"./UCI Results/5)tidy.txt",row.names=FALSE)
                         
                 }
                 else {print("Please readdata all files: `activity_labels.txt`, `features.txt`, `test` and `train`.")}
