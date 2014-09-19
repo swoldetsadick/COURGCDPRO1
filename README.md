@@ -40,9 +40,10 @@ compressed file called getdata-projectfiles-UCI HAR Dataset.zip
 which is the original downloaded file, and a file UCI HAR Dataset
 its unzipped (uncompressed) counterpart containing all relevant
 datasets. Additionally, in file UCI Results you will find datasets
-built by the current R script. Those labeled 1 to 5 are datasets
+built by run_analysis.R script. Those labeled 1 to 5 are datasets
 built in answer to questions of corresponding number of the project
 as for the rest they are transitionary datasets not of interest here.
+**The end dataset of interest is called <u>5) tidy</u>**
 
 --------------------------
 R script : run_analysis.R
